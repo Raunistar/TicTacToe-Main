@@ -1,0 +1,147 @@
+/* 🌙 DARK THEME (default) */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to bottom, #121212, #1e1e1e);
+  color: #f0f0f0;
+  background-attachment: fixed;
+  text-align: center;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #00ffc8;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f1f1f;
+  border: 2px solid #444;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cell:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+.cell.x {
+  color: #ff4d4d;
+}
+
+.cell.o {
+  color: #4caf50;
+}
+
+.win {
+  background-color: #4caf50 !important;
+  animation: flash 0.5s infinite alternate;
+}
+
+@keyframes flash {
+  from {
+    background-color: #4caf50;
+  }
+  to {
+    background-color: #ffffff;
+  }
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #2e2e2e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #00ffc8;
+  color: #000;
+}
+
+/* ☀️ LIGHT THEME */
+body.light-theme {
+  background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+  color: #111;
+}
+
+.light-theme h1 {
+  color: #ff9800;
+}
+
+.light-theme .cell {
+  background-color: #fff;
+  color: #111;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.light-theme .cell.x {
+  color: #e53935;
+}
+
+.light-theme .cell.o {
+  color: #2e7d32;
+}
+
+.light-theme .cell:hover {
+  background-color: #fbe9c6;
+  transform: scale(1.05);
+}
+
+.light-theme button {
+  background-color: #111;
+  color: #fff;
+}
+
+.light-theme button:hover {
+  background-color: #ff9800;
+  color: #000;
+}
+
+#playAgainBtn {
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#playAgainBtn:hover {
+  background-color: #ffa500;
+}
+
+.controls {
+  margin-bottom: 15px;
+}
+
+#history {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
