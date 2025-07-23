@@ -32,7 +32,7 @@ const winPatterns = [
 
 cells.forEach((cell) => cell.addEventListener("click", handleClick));
 resetBtn.addEventListener("click", resetGame);
-themeBtn.addEventListener("click", toggleTheme);
+themeBtn.addEventListener("click", themeToggle);
 clearBtn.addEventListener("click", clearHistory);
 playAgainBtn.addEventListener("click", resetGame);
 
@@ -143,12 +143,16 @@ function resetGame() {
   playAgainBtn.style.display = "none";
 }
 
-function toggleTheme() {
+function themeToggle() {
   document.body.classList.toggle("light-theme");
-  localStorage.setItem(
-    "theme",
-    document.body.classList.contains("light-theme") ? "light" : "dark"
-  );
+  localStorage.setItem("theme", setThemeIcon());
+}
+function setThemeIcon() {
+  const currentTheme = document.body.classList.contains("light-theme")
+    ? "light"
+    : "dark";
+  themeBtn.textContent = currentTheme === "light" ? "SUN" : "MOON";
+  return currentTheme;
 }
 
 function updateHistory(winner) {
@@ -163,9 +167,9 @@ function updateHistory(winner) {
 
 function displayHistory() {
   historyDiv.innerHTML = `
-    <p>Player X Wins: ${history.X}</p>
-    <p>Player O Wins: ${history.O}</p>
-    <p>Draws: ${history.draws}</p>
+    <p>Player <b style="color:red">X</b> Wins: ${history.X}</p>
+    <p>Player <b style="color:green">O</b> Wins: ${history.O}</p>
+    <p><b style="color:orange">Draws</b>: ${history.draws}</p>
   `;
 }
 
@@ -187,5 +191,8 @@ function showConfetti() {
 
 window.addEventListener("load", () => {
   const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") document.body.classList.add("light-theme");
+  if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+  }
+  setThemeIcon();
 });
