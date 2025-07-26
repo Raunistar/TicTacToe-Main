@@ -28,7 +28,8 @@ A fully responsive, feature-rich **Tic Tac Toe** game built using **HTML, CSS, a
 
 ## 📷 Preview
 
-![Tic Tac Toe Preview](preview.png) <!-- Replace with your thumbnail image -->
+![Tic Tac Toe Preview](![TTC](https://github.com/user-attachments/assets/b1759434-5b4b-4742-9554-262c25145d21)
+) <!-- Replace with your thumbnail image -->
 
 ---
 
