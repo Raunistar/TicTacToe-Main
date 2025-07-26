@@ -164,8 +164,8 @@ body.light-theme {
 }
 @media (max-width: 600px) {
   .footer {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     padding: 0.8rem;
-    line-height: 1.4;
+    line-height: 1.2;
   }
 }
